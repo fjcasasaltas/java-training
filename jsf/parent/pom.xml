@@ -43,6 +43,7 @@
 		<module>hello-world-ajax</module>
 		<module>resources</module>
 		<module>managed-beans</module>
+		<module>implicit-navigation</module>
 	</modules>
 
 	<build>

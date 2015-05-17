@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+	<title>JSF - Implicit navigation</title>
+</h:head>
+<h:body>
+	<h3>Implicit navigation</h3>
+	<h:form>
+		<p>
+			Outcome in JSF page:
+			<h:commandLink action="page1?faces-redirect=true"
+				value="Redirect to page1.xhtml" />
+		</p>
+		<p>
+			Outcome in Managed Bean:
+			<h:commandLink action="page3?faces-redirect=true"
+				value="Redirect to page3.xhtml" />
+		</p>
+	</h:form>
+</h:body>
+</html>
