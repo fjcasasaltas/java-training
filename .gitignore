@@ -1,0 +1,13 @@
+# Eclipse folders
+bin
+.metadata
+.settings
+.classpath
+.project
+Servers
+
+# Maven folders
+target
+
+# Other files
+*.bak
