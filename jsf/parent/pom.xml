@@ -40,6 +40,7 @@
 	
 	<modules>
 		<module>hello-world</module>
+		<module>hello-world-ajax</module>
 	</modules>
 
 	<build>

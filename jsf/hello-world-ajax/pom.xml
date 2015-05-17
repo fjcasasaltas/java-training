@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.fjcasasaltas.training.jsf</groupId>
+	<artifactId>hello-world-ajax</artifactId>
+	<name>JSF 2 Training: Hello World Ajax</name>
+	<description>The Hello World example with JSF 2 and Ajax</description>
+	<packaging>war</packaging>
+	<version>1.0.0</version>
+
+	<parent>
+		<groupId>com.fjcasasaltas.training.jsf</groupId>
+		<artifactId>parent</artifactId>
+		<relativePath>../parent/pom.xml</relativePath>
+		<version>1.0.0</version>
+	</parent>
+	
+	<dependencies>
+		<dependency>
+			<groupId>org.jboss.spec.javax.faces</groupId>
+			<artifactId>jboss-jsf-api_2.1_spec</artifactId>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<testResources>
+			<testResource>
+				<directory>src/main/webapp</directory>
+			</testResource>
+		</testResources>
+	</build>
+	
+</project>
