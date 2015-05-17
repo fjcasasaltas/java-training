@@ -45,6 +45,7 @@
 		<module>managed-beans</module>
 		<module>implicit-navigation</module>
 		<module>conditional-navigation</module>
+		<module>from-action-navigation</module>
 	</modules>
 
 	<build>
