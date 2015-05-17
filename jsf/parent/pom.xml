@@ -44,6 +44,7 @@
 		<module>resources</module>
 		<module>managed-beans</module>
 		<module>implicit-navigation</module>
+		<module>conditional-navigation</module>
 	</modules>
 
 	<build>
