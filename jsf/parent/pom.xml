@@ -39,6 +39,7 @@
 	</dependencyManagement>
 	
 	<modules>
+		<module>hello-world</module>
 	</modules>
 
 	<build>
