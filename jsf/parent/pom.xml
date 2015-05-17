@@ -48,6 +48,7 @@
 		<module>from-action-navigation</module>
 		<module>forward-vs-redirect</module>
 		<module>resource-bundles</module>
+		<module>internationalization</module>
 	</modules>
 
 	<build>
