@@ -41,6 +41,7 @@
 	<modules>
 		<module>hello-world</module>
 		<module>hello-world-ajax</module>
+		<module>resources</module>
 	</modules>
 
 	<build>
