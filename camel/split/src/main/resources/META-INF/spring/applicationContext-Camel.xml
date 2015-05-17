@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:camel="http://camel.apache.org/schema/spring"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	    http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+	
+	<!-- bridge spring property placeholder with Camel -->
+	<!-- you must NOT use the <context:property-placeholder at the same time, only this bridge bean -->
+	<bean id="bridgePropertyPlaceholder" class="org.apache.camel.spring.spi.BridgePropertyPlaceholderConfigurer">
+		<property name="location" value="classpath:configuration.properties"/>
+	</bean>
+
+	<bean id="lineProcessor" class="com.fjcasasaltas.training.camel.processor.LineProcessor" />
+	<bean id="itemService" class="com.fjcasasaltas.training.service.ItemServiceImpl" />
+	 
+	<camel:camelContext id="camelContext-Split">
+		<camel:route id="route-ProcessFile">
+			<camel:from uri="direct:start" />
+			<camel:pollEnrich uri="file://{{file.path}}?fileName={{file.name}}&amp;noop=true" />
+			<camel:split parallelProcessing="true" streaming="true">
+				<camel:tokenize token="\n" />
+				<camel:to uri="direct:processLine" />
+			</camel:split>
+		</camel:route>
+		<camel:route id="route-ProcessLine">
+			<camel:from uri="direct:processLine" />
+			<camel:process ref="lineProcessor" />
+			<camel:choice>
+				<camel:when>
+					<camel:simple>${body} != null</camel:simple>
+					<camel:bean ref="itemService" />
+				</camel:when>
+				<camel:otherwise>
+					<camel:log  loggingLevel="ERROR" logName="com.fjcasasaltas.training.camel" message="Invalid line"></camel:log>
+				</camel:otherwise>
+			</camel:choice>
+		</camel:route>
+	</camel:camelContext>
+
+</beans>
