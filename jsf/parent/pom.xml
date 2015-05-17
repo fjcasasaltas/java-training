@@ -47,6 +47,7 @@
 		<module>conditional-navigation</module>
 		<module>from-action-navigation</module>
 		<module>forward-vs-redirect</module>
+		<module>resource-bundles</module>
 	</modules>
 
 	<build>
