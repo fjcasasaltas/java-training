@@ -46,6 +46,7 @@
 		<module>implicit-navigation</module>
 		<module>conditional-navigation</module>
 		<module>from-action-navigation</module>
+		<module>forward-vs-redirect</module>
 	</modules>
 
 	<build>
