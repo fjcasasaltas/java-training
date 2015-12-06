@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.fjcasasaltas.training.threads</groupId>
+  <artifactId>parent</artifactId>
+  <name>Java Threads: Parent Project</name>
+  <description>Threads in Java</description>
+  <packaging>pom</packaging>
+  <version>1.0.0</version>
+
+  <properties>
+    <!-- Build properties -->
+    <jdk.version>1.8</jdk.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <!-- Dependencies versions -->
+    <log4j.version>1.2.17</log4j.version>
+    <slf4j.version>1.7.7</slf4j.version>
+    <!-- Maven plugins versions -->
+    <maven-compiler-plugin.version>3.2</maven-compiler-plugin.version>
+  </properties>
+
+  <dependencyManagement>
+  	<dependencies>
+      <!-- Log4J -->
+  	  <dependency>
+	     <groupId>log4j</groupId>
+	     <artifactId>log4j</artifactId>
+	     <version>${log4j.version}</version>
+      </dependency>
+      <!-- SLF4J -->
+      <dependency>
+	     <groupId>org.slf4j</groupId>
+	     <artifactId>slf4j-api</artifactId>
+	     <version>${slf4j.version}</version>
+      </dependency>
+      <dependency>
+	     <groupId>org.slf4j</groupId>
+	     <artifactId>slf4j-log4j12</artifactId>
+	     <version>${slf4j.version}</version>
+      </dependency>
+  	</dependencies>
+  </dependencyManagement>
+
+  <modules>
+    <module>../01_starting</module>
+    <module>../02_basic-synchronization</module>
+    <module>../03_thread-pools</module>
+    <module>../04_countdown-latches</module>
+    <module>../05_producer-consumer</module>
+    <module>../06_wait-notify</module>
+    <module>../07_low-level-synchronization</module>
+    <module>../08_re-entrant-locks</module>
+    <module>../09_deadlock</module>
+    <module>../10_semaphores</module>
+    <module>../11_callable-and-future</module>
+    <module>../12_interrupting-threads</module>
+    <module>../13_multithreading-swing</module>
+  </modules>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>${maven-compiler-plugin.version}</version>
+        <configuration>
+        	<source>${jdk.version}</source>
+        	<target>${jdk.version}</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>
