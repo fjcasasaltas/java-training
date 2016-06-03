@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>es.indra.training.jee.jpa</groupId>
+	<artifactId>webapp</artifactId>
+	<packaging>war</packaging>
+	<name>JEE - JPA - Web Application</name>
+
+	<parent>
+		<groupId>es.indra.training.jee.jpa</groupId>
+		<artifactId>parent</artifactId>
+		<relativePath>../parent/pom.xml</relativePath>
+		<version>1.0.0</version>
+	</parent>
+
+	<dependencies>
+		<!-- Project Modules -->
+		<dependency>
+			<groupId>es.indra.training.jee.jpa</groupId>
+			<artifactId>domain</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<!-- EJB API -->
+		<dependency>
+			<groupId>org.jboss.spec.javax.ejb</groupId>
+			<artifactId>jboss-ejb-api_3.1_spec</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<!-- JPA -->
+		<dependency>
+			<groupId>org.eclipse.persistence</groupId>
+			<artifactId>javax.persistence</artifactId>
+		</dependency>
+		<!-- Servlet API -->
+		<dependency>
+			<groupId>org.jboss.spec.javax.servlet</groupId>
+			<artifactId>jboss-servlet-api_3.1_spec</artifactId>
+		</dependency>
+	</dependencies>
+
+</project>
